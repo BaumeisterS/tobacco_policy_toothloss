@@ -15,9 +15,8 @@ data/
     bans/    Table_9078.xls  (restaurant smoking restrictions)
              Table_3207.xls  (mall/grocery smoking restrictions)
 
-If you only wish to regenerate the tables and figures (Path B), the analysis data
-set is not required: the small intermediate result files in ../output/ are
-sufficient.
+The scripts in ../code/ write all estimates (.csv) and figures (.png) to
+../output/ at run time; no results or data are stored in this repository.
 
 Sources
 -------
