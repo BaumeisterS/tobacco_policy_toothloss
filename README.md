@@ -14,8 +14,9 @@ the scripts on the assembled data set regenerates the estimates and figures.
 | Component | Version | Packages used |
 |-----------|---------|---------------|
 | Stata     | 19.5    | `reghdfe`, `ftools`, `rangestat` |
-| R         | 4.6.0   | `data.table`, `haven`, `fixest`, `did`, `didimputation`, `ggplot2` |
+| R         | 4.6.0   | `data.table`, `haven`, `fixest`, `did`, `didimputation`, `ggplot2`, `clubSandwich` |
 | Python    | 3.11+   | `matplotlib` |
+| LaTeX     | TeX Live / TinyTeX | `tikz` (causal DAG / Δ-SWIG figure) |
 
 Standard errors are clustered by state throughout. All reported regression
 estimates are covariate-adjusted (age, sex, race/ethnicity, education, diagnosed
@@ -63,6 +64,10 @@ Run all commands with the repository root as the working directory.
    (this driver runs `04a_robust_prep.R`, then `04b_robust_cell.R` once per
    treatment × outcome, then `04c_event_study_figures.R`)
 5. `05_causal_graph.py` (Python) → causal-diagram figure
+6. `06_power_analysis.R` (R) → design-based minimum-detectable-effect table and Monte-Carlo power curves
+7. `07_power_figure.R` (R) → statistical-power figure
+8. `08_robust_ci_cr2.R` (R) → CR2 bias-reduced, Satterthwaite small-cluster confidence intervals
+9. `09_causal_graph_swig.tex` (LaTeX/TikZ) → causal DAG and Δ-SWIG figure (compile with `pdflatex` or `tinytex::latexmk`)
 
 All results (`.csv`) and figures (`.png`) are written to `output/`.
 
