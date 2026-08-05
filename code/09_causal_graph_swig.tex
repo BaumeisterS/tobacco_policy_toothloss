@@ -23,8 +23,8 @@
 % ======================= Panel A : Causal DAG (two periods) =======================
 \begin{scope}
   \node[lat] (U)  at (2.7, 3.2)  {$U$};
-  \node[obs] (A)  at (0, 1.1)    {$A$};
-  \node[obs] (M)  at (2.7, 1.1)  {$M$};
+  \node[obs] (A)  at (0, 1.1)    {$D$};
+  \node[obs] (M)  at (2.7, 1.1)  {$S$};
   \node[obs] (Y1) at (5.4, 1.1)  {$Y_1$};
   \node[obs] (Y0) at (0, -1.6)   {$Y_0$};
   \node[obs] (X)  at (5.4, -1.6) {$X$};
@@ -48,7 +48,7 @@
 % ======================= Panel B : Delta-SWIG (conditional PT) =======================
 \begin{scope}[xshift=10.4cm]
   \node[lat]  (U2) at (2.9, 3.2)  {$U$};
-  \node[swig] (Aa) at (0, 1.1)    {$A$ \nodepart{two} $a$};
+  \node[swig] (Aa) at (0, 1.1)    {$D$ \nodepart{two} $d$};
   \node[obs, minimum width=30mm] (DY) at (5.6, 1.1) {$\Delta Y(0)=Y_1(0)-Y_0(0)$};
   \node[obs]  (X2) at (2.9, -1.6) {$X$};
 
@@ -60,7 +60,7 @@
 
   \node[anchor=west, font=\bfseries] at (-1.2, 4.2) {(B)\ \ $\Delta$-SWIG: conditional parallel trends};
   \node[align=center, font=\footnotesize] at (2.9, -3.0)
-       {$a \;\perp\!\!\!\perp\; \Delta Y(0)\,\mid\, X$};
+       {$d \;\perp\!\!\!\perp\; \Delta Y(0)\,\mid\, X$};
 \end{scope}
 
 % ======================= shared key =======================

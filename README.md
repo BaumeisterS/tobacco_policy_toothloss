@@ -13,7 +13,7 @@ the scripts on the assembled data set regenerates the estimates and figures.
 
 | Component | Version | Packages used |
 |-----------|---------|---------------|
-| Stata     | 19.5    | `reghdfe`, `ftools`, `rangestat` |
+| Stata     | 19.5    | `reghdfe`, `ftools`, `rangestat`, `did2s` |
 | R         | 4.6.0   | `data.table`, `haven`, `fixest`, `did`, `didimputation`, `ggplot2`, `clubSandwich` |
 | Python    | 3.11+   | `matplotlib` |
 | LaTeX     | TeX Live / TinyTeX | `tikz` (causal DAG / Δ-SWIG figure) |
@@ -68,6 +68,7 @@ Run all commands with the repository root as the working directory.
 7. `07_power_figure.R` (R) → statistical-power figure
 8. `08_robust_ci_cr2.R` (R) → CR2 bias-reduced, Satterthwaite small-cluster confidence intervals
 9. `09_causal_graph_swig.tex` (LaTeX/TikZ) → causal DAG and Δ-SWIG figure (compile with `pdflatex` or `tinytex::latexmk`)
+10. `10_continuous_dose_robust.do` (Stata) → continuous-dose heterogeneity-robust estimators: extended two-way fixed-effects (Mundlak) and the Gardner two-stage estimator
 
 All results (`.csv`) and figures (`.png`) are written to `output/`.
 
@@ -82,6 +83,10 @@ All results (`.csv`) and figures (`.png`) are written to `output/`.
 | `03_primary_estimates.R` | `res_final_main.csv`, `res_final_lag.csv`, `res_final_negctrl.csv`, `res_final_regyr.csv`, `res_final_loo.csv` |
 | `04a/04b/04c` (via `04_run_robust.R`) | `res_robust_R.csv`, `es_R.csv`, `figR_es_behavior.png`, `figR_es_toothloss.png` |
 | `05_causal_graph.py` | `figS_causalgraph.png` |
+| `06_power_analysis.R` / `07_power_figure.R` | `res_power_curve.csv`, `figR_power.png` |
+| `08_robust_ci_cr2.R` | CR2 small-cluster confidence intervals |
+| `09_causal_graph_swig.tex` | causal DAG / Δ-SWIG figure |
+| `10_continuous_dose_robust.do` | `res_continuous_dose.csv` |
 
 ---
 
